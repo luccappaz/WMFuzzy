@@ -26,7 +26,7 @@ Add `wm_fuzzy` to your project's `Cargo.toml`:
 
 ```toml
 [dependencies]
-wm_fuzzy = "0.1.2"
+wm_fuzzy = "0.2.0"
 plotters = "0.3.7"
 polars = {version = "0.55.2", features = ["lazy"]}
 serde = { version = "1.0.229", features = ["derive"] }
