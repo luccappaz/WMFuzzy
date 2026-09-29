@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.0](https://github.com/luccappaz/wm_model_rust/compare/v0.1.0...v0.2.0) - 2026-09-29
+
+### Bug Fixes
+
+- fixing cargo.toml version
+- fixing release-plz.toml
+- fixing not found in README
+- use io::Error::other to satisfy clippy
+
+### Other
+
+- Writing the CHANGELOG
+- seems like CHANGELOG were actually needed
+- *(release-plz)* fix changelog config syntax
+- reverting original version
+- add CHANGELOG.md
+- Installing missing deps in git workflow
+- Finetuning the code
+- adding gif demo
+- Update badges in README.md
+- Adding more complete example
+- Fixing release-plz.toml file
+- Adding automatic publishing
+
 ## [0.1.1] - 2026-09-29
 
 ### Features
