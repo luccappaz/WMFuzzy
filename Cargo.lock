@@ -3762,7 +3762,7 @@ dependencies = [
 
 [[package]]
 name = "wm_fuzzy"
-version = "0.1.2"
+version = "0.1.1"
 dependencies = [
  "plotters",
  "polars",
