@@ -2,24 +2,25 @@
 publish = true
 
 [changelog]
+update = true
 header = "# Changelog\n\nAll notable changes to this project will be documented in this file."
 
-[[changelog.commit_parsers]]
+[[changelog.commit_parser]]
 message = "^feat"
 group = "Features"
 
-[[changelog.commit_parsers]]
+[[changelog.commit_parser]]
 message = "^fix"
 group = "Bug Fixes"
 
-[[changelog.commit_parsers]]
+[[changelog.commit_parser]]
 message = "^perf"
 group = "Performance"
 
-[[changelog.commit_parsers]]
+[[changelog.commit_parser]]
 message = "^docs"
 group = "Documentation"
 
-[[changelog.commit_parsers]]
+[[changelog.commit_parser]]
 message = ".*"
 group = "Other"
