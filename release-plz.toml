@@ -1,26 +1,26 @@
 [workspace]
 publish = true
+changelog_update = true
 
 [changelog]
-update = true
 header = "# Changelog\n\nAll notable changes to this project will be documented in this file."
 
-[[changelog.commit_parser]]
+[[changelog.commit_parsers]]
 message = "^feat"
 group = "Features"
 
-[[changelog.commit_parser]]
+[[changelog.commit_parsers]]
 message = "^fix"
 group = "Bug Fixes"
 
-[[changelog.commit_parser]]
+[[changelog.commit_parsers]]
 message = "^perf"
 group = "Performance"
 
-[[changelog.commit_parser]]
+[[changelog.commit_parsers]]
 message = "^docs"
 group = "Documentation"
 
-[[changelog.commit_parser]]
+[[changelog.commit_parsers]]
 message = ".*"
 group = "Other"
