@@ -1,57 +1,87 @@
+use polars::prelude::*;
 use std::collections::HashMap;
-use wm_fuzzy::{Granularity, TNorm, WMModel, WMModelError};
+use wm_fuzzy::{
+    Granularity, TNorm,
+    wm_model::{WMModel, plot_all_membership_functions},
+};
 
-fn main() -> Result<(), WMModelError> {
-    println!("==================================================");
-    println!("    METABOLIC SYNDROME - (FAKE) FUZZY INFERENCE CLI      ");
-    println!("==================================================");
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    println!("\x1b[1;36m=== 🔮 wm_fuzzy: Interactive Wang-Mendel Demo ===\x1b[0m\n");
 
-    println!("\nThe weighted average value stands for the chance to have the SM");
-    println!("\nATTENTION: Values only for testing!");
+    // 1. Model instantiation
+    println!("\x1b[1;33m[1/6] Initializing WMModel...\x1b[0m");
+    let mut model = WMModel::default();
 
-    let mut model = WMModel::new();
+    // 2. Configure Granularity and Limits for each variable
+    let mut granularity = HashMap::new();
+    granularity.insert("temperature".to_string(), Granularity::Three); // Low, Medium, High
+    granularity.insert("humidity".to_string(), Granularity::Three);
 
-    // 1. Carrega as regras salvas
-    model.load_rules("examples/rules.json")?;
-    println!("✓ Loaded {} rules from rules.json\n", model.rules.len());
+    let mut limits = HashMap::new();
+    limits.insert("temperature".to_string(), vec![0.0, 25.0, 50.0]);
+    limits.insert("humidity".to_string(), vec![0.0, 50.0, 100.0]);
 
-    // 2. Configura as variáveis de entrada da Síndrome Metabólica
-    let features = vec![
-        "age",
-        "waist_thigh_ratio",
-        "waist_hip_ratio",
-        "sleep_hours_per_night",
-        "physical_activity_categorized",
-    ];
+    model.build(granularity, limits.clone())?;
+    println!("  └─ Granularity & Limits configured for 'temperature' and 'humidity'.");
 
-    let labels = vec!["low".to_string(), "medium".to_string(), "high".to_string()];
+    // 3. Prepare training data (Polars DataFrame and Series)
+    println!("\n\x1b[1;33m[2/6] Loading Polars Training Dataset...\x1b[0m");
+    let x_train = df![
+        "temperature" => &[10.0, 20.0, 30.0, 40.0, 15.0, 35.0],
+        "humidity" => &[20.0, 40.0, 60.0, 80.0, 30.0, 75.0],
+    ]?;
 
-    let limits_map: HashMap<&str, Vec<f64>> = HashMap::from([
-        ("age", vec![20.0, 45.0, 70.0]),
-        ("waist_thigh_ratio", vec![1.0, 1.4, 1.8]),
-        ("waist_hip_ratio", vec![0.70, 0.85, 1.00]),
-        ("sleep_hours_per_night", vec![4.0, 7.0, 10.0]),
-        ("physical_activity_categorized", vec![0.0, 2.5, 5.0]),
-    ]);
+    let y_train = Series::new("output".into(), &[0.1, 0.4, 0.7, 0.9, 0.2, 0.8]);
+    println!("  └─ Train shape: {} rows", x_train.height());
 
-    for &feat in &features {
-        model
-            .granularity
-            .insert(feat.to_string(), Granularity::Three);
-        model.labels.insert(feat.to_string(), labels.clone());
-        model
-            .limits
-            .insert(feat.to_string(), limits_map[feat].clone());
-    }
+    // 4. Fuzzy Rule Generation / Training
+    println!("\n\x1b[1;33m[3/6] Generating Fuzzy Rules (Wang-Mendel Algorithm)...\x1b[0m");
+    let min_support = 0.05;
+    let min_confidence = 0.1;
 
-    model.build_mf_config();
+    let rules = model.generate_rules(
+        &x_train,
+        &y_train,
+        None,
+        TNorm::Product,
+        min_support,
+        min_confidence,
+    )?;
 
-    // 3. Solicita os antecedentes interativamente ao usuário
-    let user_antecedents = model.prompt_antecedents();
+    println!(
+        "  └─ \x1b[1;32m✅ Generated {} fuzzy rules.\x1b[0m",
+        rules.len()
+    );
 
-    // 4. Executa a inferência difusa
-    println!("\n--- INFERENCE RESULT ---");
-    model.infer(&user_antecedents, TNorm::Product);
+    // 5. Interactive Inference Prompt via model.prompt_infer
+    println!("\n\x1b[1;33m[4/6] Launching Interactive Inference Prompt...\x1b[0m");
+    let activated_rules = model.prompt_infer(TNorm::Product)?;
+    println!(
+        "\n  └─ \x1b[1;32m🔥 Total activated rules: {}\x1b[0m",
+        activated_rules.len()
+    );
+
+    // 6. Batch prediction on a test DataFrame
+    println!("\n\x1b[1;33m[5/6] Executing Batch Prediction...\x1b[0m");
+    let x_test = df![
+        "temperature" => &[12.0, 38.0],
+        "humidity" => &[25.0, 70.0],
+    ]?;
+
+    let (continuous_preds, binary_preds) =
+        model.predict(&x_test, None, Some(0.5), 0.0, TNorm::Product)?;
+
+    println!("  ├─ 🔮 Continuous predictions: {:?}", continuous_preds);
+    println!("  └─ 🔮 Binary predictions:     {:?}", binary_preds);
+
+    // 7. Save generated rules to disk and plot membership functions
+    println!("\n\x1b[1;33m[6/6] Exporting Artifacts...\x1b[0m");
+    model.save_rules("fuzzy_rules.json")?;
+    plot_all_membership_functions(&limits, "./plots")?;
+    println!("  ├─ Saved rules to: \x1b[36mfuzzy_rules.json\x1b[0m");
+    println!("  └─ Plotted MFs to:  \x1b[36m./plots/\x1b[0m");
+
+    println!("\n\x1b[1;32m✨ Demo completed successfully!\x1b[0m");
 
     Ok(())
 }

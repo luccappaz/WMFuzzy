@@ -1,0 +1,86 @@
+[
+  {
+    "antecedents": {
+      "data": {
+        "temperature": "low",
+        "humidity": "low"
+      }
+    },
+    "weighted_average": 0.15000000000000002,
+    "weighted_variance": 0.0642857142857143,
+    "doc": 0.9196428571428571,
+    "support": 0.09333333333333334
+  },
+  {
+    "antecedents": {
+      "data": {
+        "temperature": "low",
+        "humidity": "med"
+      }
+    },
+    "weighted_average": 0.21250000000000002,
+    "weighted_variance": 0.09375000000000001,
+    "doc": 0.8828125,
+    "support": 0.10666666666666667
+  },
+  {
+    "antecedents": {
+      "data": {
+        "temperature": "med",
+        "humidity": "low"
+      }
+    },
+    "weighted_average": 0.21250000000000002,
+    "weighted_variance": 0.09375000000000001,
+    "doc": 0.8828125,
+    "support": 0.10666666666666667
+  },
+  {
+    "antecedents": {
+      "data": {
+        "temperature": "med",
+        "humidity": "med"
+      }
+    },
+    "weighted_average": 0.5203539823008849,
+    "weighted_variance": 0.22974391103453679,
+    "doc": 0.7128201112068291,
+    "support": 0.3766666666666667
+  },
+  {
+    "antecedents": {
+      "data": {
+        "temperature": "med",
+        "humidity": "high"
+      }
+    },
+    "weighted_average": 0.8114285714285716,
+    "weighted_variance": 0.06073469387755108,
+    "doc": 0.9240816326530612,
+    "support": 0.11666666666666665
+  },
+  {
+    "antecedents": {
+      "data": {
+        "temperature": "high",
+        "humidity": "med"
+      }
+    },
+    "weighted_average": 0.8133333333333332,
+    "weighted_variance": 0.0693333333333333,
+    "doc": 0.9133333333333333,
+    "support": 0.10000000000000002
+  },
+  {
+    "antecedents": {
+      "data": {
+        "temperature": "high",
+        "humidity": "high"
+      }
+    },
+    "weighted_average": 0.8533333333333333,
+    "weighted_variance": 0.056,
+    "doc": 0.93,
+    "support": 0.10000000000000002
+  }
+]

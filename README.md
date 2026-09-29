@@ -26,7 +26,12 @@ Add `wm_fuzzy` to your project's `Cargo.toml`:
 
 ```toml
 [dependencies]
-wm_fuzzy = "0.1.0"
+wm_fuzzy = "0.1.2"
+plotters = "0.3.7"
+polars = {version = "0.55.2", features = ["lazy"]}
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.151"
+thiserror = "2.0.20"
 ```
 
 ---
@@ -34,69 +39,90 @@ wm_fuzzy = "0.1.0"
 ## Quickstart
 
 ```rust
+use polars::prelude::*;
 use std::collections::HashMap;
-use wm_fuzzy::{Granularity, TNorm, WMModel, WMModelError};
+use wm_fuzzy::{
+    Granularity, TNorm,
+    wm_model::{WMModel, plot_all_membership_functions},
+};
 
-fn main() -> Result<(), WMModelError> {
-    let mut model = WMModel::new();
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    println!("\x1b[1;36m=== 🔮 wm_fuzzy: Interactive Wang-Mendel Demo ===\x1b[0m\n");
 
-    // 1. Configure fuzzy partitions (Universes of Discourse)
-    model.granularity.insert("temperature".to_string(), Granularity::Three);
-    model.granularity.insert("pressure".to_string(), Granularity::Three);
+    // 1. Model instantiation
+    println!("\x1b[1;33m[1/6] Initializing WMModel...\x1b[0m");
+    let mut model = WMModel::default();
 
-    model.labels.insert(
-        "temperature".to_string(),
-        vec!["low".to_string(), "medium".to_string(), "high".to_string()],
-    );
-    model.labels.insert(
-        "pressure".to_string(),
-        vec!["low".to_string(), "medium".to_string(), "high".to_string()],
-    );
+    // 2. Configure Granularity and Limits for each variable
+    let mut granularity = HashMap::new();
+    granularity.insert("temperature".to_string(), Granularity::Three); // Low, Medium, High
+    granularity.insert("humidity".to_string(), Granularity::Three);
 
-    model.limits.insert("temperature".to_string(), vec![10.0, 25.0, 40.0]);
-    model.limits.insert("pressure".to_string(), vec![80.0, 100.0, 120.0]);
+    let mut limits = HashMap::new();
+    limits.insert("temperature".to_string(), vec![0.0, 25.0, 50.0]);
+    limits.insert("humidity".to_string(), vec![0.0, 50.0, 100.0]);
 
-    // 2. Prepare training data
-    let mut x_train = Vec::new();
-    let y_train = vec![0.1, 0.5, 0.9];
+    model.build(granularity, limits.clone())?;
+    println!("  └─ Granularity & Limits configured for 'temperature' and 'humidity'.");
 
-    let samples = [
-        (12.0, 85.0),
-        (24.0, 100.0),
-        (38.0, 118.0),
-    ];
+    // 3. Prepare training data (Polars DataFrame and Series)
+    println!("\n\x1b[1;33m[2/6] Loading Polars Training Dataset...\x1b[0m");
+    let x_train = df![
+        "temperature" => &[10.0, 20.0, 30.0, 40.0, 15.0, 35.0],
+        "humidity" => &[20.0, 40.0, 60.0, 80.0, 30.0, 75.0],
+    ]?;
 
-    for &(t, p) in &samples {
-        let mut row = HashMap::new();
-        row.insert("temperature".to_string(), t);
-        row.insert("pressure".to_string(), p);
-        x_train.push(row);
-    }
+    let y_train = Series::new("output".into(), &[0.1, 0.4, 0.7, 0.9, 0.2, 0.8]);
+    println!("  └─ Train shape: {} rows", x_train.height());
 
-    let features = vec!["temperature".to_string(), "pressure".to_string()];
+    // 4. Fuzzy Rule Generation / Training
+    println!("\n\x1b[1;33m[3/6] Generating Fuzzy Rules (Wang-Mendel Algorithm)...\x1b[0m");
+    let min_support = 0.05;
+    let min_confidence = 0.1;
 
-    // 3. Generate rules (min_support = 0.01, min_confidence = 0.1)
-    let rules = model.generate_rules(&x_train, &y_train, &features, TNorm::Product, 0.01, 0.1);
-    println!("Extracted {} fuzzy rules.", rules.len());
-
-    // 4. Save learned rules to JSON
-    model.save_rules("rules.json")?;
-
-    // 5. Predict on test samples
-    let (continuous_preds, binary_preds) = model.predict(
+    let rules = model.generate_rules(
         &x_train,
-        Some(0.5), // Classification threshold
-        0.0,       // Fallback value
+        &y_train,
+        None,
         TNorm::Product,
+        min_support,
+        min_confidence,
     )?;
 
-    println!("Continuous predictions: {:?}", continuous_preds);
-    println!("Binary predictions:     {:?}", binary_preds);
+    println!(
+        "  └─ \x1b[1;32m✅ Generated {} fuzzy rules.\x1b[0m",
+        rules.len()
+    );
 
-    // 6. Evaluate and write metrics to fuzzy_results.json
-    let y_true = vec![0, 1, 1];
-    let metrics = model.evaluate(&x_train, &y_true, None)?;
-    println!("Model Accuracy: {:.2}%", metrics.accuracy * 100.0);
+    // 5. Interactive Inference Prompt via model.prompt_infer
+    println!("\n\x1b[1;33m[4/6] Launching Interactive Inference Prompt...\x1b[0m");
+    let activated_rules = model.prompt_infer(TNorm::Product)?;
+    println!(
+        "\n  └─ \x1b[1;32m🔥 Total activated rules: {}\x1b[0m",
+        activated_rules.len()
+    );
+
+    // 6. Batch prediction on a test DataFrame
+    println!("\n\x1b[1;33m[5/6] Executing Batch Prediction...\x1b[0m");
+    let x_test = df![
+        "temperature" => &[12.0, 38.0],
+        "humidity" => &[25.0, 70.0],
+    ]?;
+
+    let (continuous_preds, binary_preds) =
+        model.predict(&x_test, None, Some(0.5), 0.0, TNorm::Product)?;
+
+    println!("  ├─ 🔮 Continuous predictions: {:?}", continuous_preds);
+    println!("  └─ 🔮 Binary predictions:     {:?}", binary_preds);
+
+    // 7. Save generated rules to disk and plot membership functions
+    println!("\n\x1b[1;33m[6/6] Exporting Artifacts...\x1b[0m");
+    model.save_rules("fuzzy_rules.json")?;
+    plot_all_membership_functions(&limits, "./plots")?;
+    println!("  ├─ Saved rules to: \x1b[36mfuzzy_rules.json\x1b[0m");
+    println!("  └─ Plotted MFs to:  \x1b[36m./plots/\x1b[0m");
+
+    println!("\n\x1b[1;32m✨ Demo completed successfully!\x1b[0m");
 
     Ok(())
 }
@@ -125,24 +151,20 @@ $$\hat{y} = \frac{\sum_{k=1}^{R} \alpha_k \cdot \bar{y}_k}{\sum_{k=1}^{R} \alpha
 
 ## CLI & Interactive Exploration
 
-To launch the built-in interactive antecedent selector:
+To launch the built-in interactive inference prompt:
 
 ```rust
-let user_antecedents = model.prompt_antecedents();
-model.infer(&user_antecedents, TNorm::Product);
+let activated_rules = model.prompt_infer(TNorm::Product)?;
 ```
 
 ```text
 ==================================================
-           FUZZY ANTECEDENTS SELECTION            
+                INPUT INFERENCE                   
 ==================================================
 
-Attribute: "temperature"
-Select a linguistic term:
-  [1] low          -> [a:   10.000, b (center):   10.000, c:   25.000]
-  [2] medium       -> [a:   10.000, b (center):   25.000, c:   40.000]
-  [3] high         -> [a:   25.000, b (center):   40.000, c:   40.000]
-Enter option number (1-3) or exact name: 2
+👉 Enter the value for the attribute "temperature": 22.5
+
+👉 Enter the value for the attribute "humidity": 45.0
 ```
 
 ---
