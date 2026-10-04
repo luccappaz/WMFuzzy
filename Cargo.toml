@@ -12,7 +12,12 @@ categories = ["science", "mathematics", "algorithms"]
 
 [dependencies]
 plotters = "0.3.7"
-polars = {version = "0.55.2", features = ["lazy"]}
+polars = {version = "0.55.2", features = ["lazy"], optional=true}
 serde = { version = "1.0.229", features = ["derive"] }
 serde_json = "1.0.151"
+tempfile = "3.27.0"
 thiserror = "2.0.20"
+
+[features]
+default = ["polars"]
+polars = ["dep:polars"]

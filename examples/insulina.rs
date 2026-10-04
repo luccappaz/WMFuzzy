@@ -2,9 +2,8 @@ use polars::prelude::*;
 use std::collections::HashMap;
 use std::io::{Write, stdin, stdout};
 use std::path::PathBuf;
-use wm_fuzzy::wm_model::{WMModel, plot_all_membership_functions};
-
-use wm_fuzzy::{Granularity, TNorm};
+use wm_fuzzy::fuzzy::TNorm;
+use wm_fuzzy::model::wm::WMModel;
 
 fn read_user_input(prompt: &str) -> String {
     print!("{}", prompt);
@@ -33,7 +32,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         "physical_activity_categorized",
     ];
 
-    // Explicit name of the output column (adjust according to your CSV header)
+    // Explicit name of the output column
     const TARGET: &str = "metabolic_syndrome";
 
     // Prepare the list of all required columns (Features + Target)
@@ -56,29 +55,32 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         return Err(format!("No samples found for sex == {}", target_sex).into());
     }
 
-    // Maps the specific granularity of each attribute
-    let granularity: HashMap<String, Granularity> = [
-        ("age".to_string(), Granularity::Three),
-        ("waist_thigh_ratio".to_string(), Granularity::Five),
-        ("waist_hip_ratio".to_string(), Granularity::Three),
-        ("sleep_hours_per_night".to_string(), Granularity::Three),
-        (
-            "physical_activity_categorized".to_string(),
-            Granularity::Three,
-        ),
+    // Map target partition counts for each feature
+    let feature_granularities: HashMap<String, usize> = [
+        ("age".to_string(), 3),
+        ("waist_thigh_ratio".to_string(), 5),
+        ("waist_hip_ratio".to_string(), 3),
+        ("sleep_hours_per_night".to_string(), 3),
+        ("physical_activity_categorized".to_string(), 3),
     ]
     .into_iter()
     .collect();
 
-    // Compute quantile limits using Polars
-    let limits = compute_limits(&df, &granularity)?;
+    // Compute quantile limits (custom grid knots) using Polars
+    let limits = compute_limits(&df, &feature_granularities)?;
+
+    // Initialize model and configure strategies from computed quantile knots
+    let mut model = WMModel::new();
+    model.set_kind("triangular")?;
+
+    for (feature, knots) in &limits {
+        model.add_custom_strategy(feature, knots.clone())?;
+    }
+
+    model.build()?;
 
     // Generate and save Membership Function (MF) plots
-    plot_all_membership_functions(&limits, "./plots")?;
-
-    // Initialize and build membership functions in the model
-    let mut model = WMModel::default();
-    model.build(granularity, limits.clone())?;
+    model.plot_membership_functions("./plots")?;
 
     println!(
         "✅ Model configured: Configured MFs = {}",
@@ -86,7 +88,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     );
 
     let y = df.column(TARGET).unwrap().as_materialized_series().clone();
-
     let x = df.drop(TARGET).unwrap();
 
     // Generate fuzzy rules directly from DataFrame
@@ -119,7 +120,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let (mut y_pred, active_rules) = model.infer(&sample_input, TNorm::Product);
 
     // Variable to store the final estimation of the model
-    if !active_rules.is_empty() || !y_pred.is_none() {
+    if !active_rules.is_empty() || y_pred.is_some() {
         println!("🔥 Active Rules ({}):", active_rules.len());
 
         for (idx, active_rule) in active_rules.into_iter().enumerate() {
@@ -174,19 +175,19 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 fn compute_limits(
     df: &DataFrame,
-    granularity: &HashMap<String, Granularity>,
+    feature_granularities: &HashMap<String, usize>,
 ) -> Result<HashMap<String, Vec<f64>>, Box<dyn std::error::Error>> {
     let mut limits = HashMap::new();
 
-    for (feature, gran) in granularity {
+    for (feature, &count) in feature_granularities {
         let feature_ps = PlSmallStr::from_str(feature.as_str());
 
         if !df.get_column_names().contains(&&feature_ps) {
             continue;
         }
 
-        let feature_limits = match gran {
-            Granularity::Three => {
+        let feature_limits = match count {
+            3 => {
                 let result = df
                     .clone()
                     .lazy()
@@ -209,7 +210,7 @@ fn compute_limits(
                     result.column("q100")?.f64()?.get(0).unwrap_or(0.0),
                 ]
             }
-            Granularity::Five => {
+            5 => {
                 let result = df
                     .clone()
                     .lazy()
@@ -240,6 +241,7 @@ fn compute_limits(
                     result.column("q100")?.f64()?.get(0).unwrap_or(0.0),
                 ]
             }
+            _ => return Err(format!("Unsupported granularity count: {}", count).into()),
         };
 
         limits.insert(feature.clone(), feature_limits);
