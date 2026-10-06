@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.0](https://github.com/luccappaz/WMFuzzy/compare/v0.3.0...v0.4.0) - 2026-10-06
+
+### Other
+
+- Adding case 1 and case 2 for fuzzy rules and example with a wine dataset
+- Update wm_fuzzy version in README.md
+
 ## [0.3.0](https://github.com/luccappaz/wm_model_rust/compare/v0.2.0...v0.3.0) - 2026-10-04
 
 ### Other
