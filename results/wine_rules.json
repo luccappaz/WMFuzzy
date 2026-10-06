@@ -1,0 +1,4586 @@
+[
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7481476715199179,
+    "support": 0.0056790225127891485
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8145311344748529,
+    "support": 0.009528573424501315
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6319266984944388,
+    "support": 0.009267712128620615
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8261231062431714,
+    "support": 0.010727361801136827
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.4775609824994323,
+    "support": 0.0024380782886172956
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7654399464404998,
+    "support": 0.0030944682672349754
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.4721726825831157,
+    "support": 0.007651591769778258
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.8449005820086654,
+    "support": 0.009094958925261687
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6752684436236766,
+    "support": 0.002036566398236117
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7180807737733552,
+    "support": 0.007114787376723366
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8645896368866302,
+    "support": 0.002593690535588169
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "low",
+        "residual sugar": "low",
+        "sulphates": "high",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.5750589953420043,
+    "support": 0.00005596420440644124
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7829998168059336,
+    "support": 0.005397332553106664
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.6687555284181281,
+    "support": 0.010708310383490821
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.46657194994897055,
+    "support": 0.001258721431606518
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6427181004003748,
+    "support": 0.009407729787948021
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7466934690702306,
+    "support": 0.00464075905052019
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "low",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.69806857862255,
+    "support": 0.0010482587016067246
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6098980451376902,
+    "support": 0.0006230476354000754
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8611013151291942,
+    "support": 0.002480433743203819
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8451242640358652,
+    "support": 0.003169004922379603
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7665877146809953,
+    "support": 0.005448660741581844
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "low",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6982469334053004,
+    "support": 0.003197224136547474
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.5420983396268497,
+    "support": 0.0039005160581611987
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.539955365395976,
+    "support": 0.004751598651781943
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7726629129917044,
+    "support": 0.004396443928556539
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "high",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7241502109882081,
+    "support": 0.0003715215795176131
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6896127941985839,
+    "support": 0.005498866903201458
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.716306053273924,
+    "support": 0.004804284771368177
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "low",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.5747061478627176,
+    "support": 0.0005109366433275558
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "high",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "very_high"
+    },
+    "weighted_average": 7.166666666666667,
+    "doc": 0.4461839145794957,
+    "support": 0.0005721074866769809
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "high",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8424868523434609,
+    "support": 0.00026567705920699204
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "med",
+        "citric acid": "med",
+        "density": "high",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "high",
+        "pH": "med",
+        "residual sugar": "high",
+        "sulphates": "med",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8287851903391742,
+    "support": 0.0000603782406618354
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "low",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.7320797369649288,
+    "support": 0.001523796400812262
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8622607189654448,
+    "support": 0.0043570825901951
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6670189352193241,
+    "support": 0.002620784724890322
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6758134222310495,
+    "support": 0.0025326712034533143
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7178564121248614,
+    "support": 0.005233045534961074
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6272476397639886,
+    "support": 0.0029359795607500675
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "med",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "low",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.645073240299118,
+    "support": 0.0006720160500502169
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.8074506881964425,
+    "support": 0.0009723679196860358
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.5738894087849764,
+    "support": 0.005047448473585415
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.5962699791151101,
+    "support": 0.0028219959175250046
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7840051481036074,
+    "support": 0.0004897016299648644
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8615015764705207,
+    "support": 0.0029653275134274826
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.652266539324886,
+    "support": 0.0027111019531972937
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8573745059190562,
+    "support": 0.0023122239216462567
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "med",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "low",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7774196781334092,
+    "support": 0.0006062594968429579
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6237436957569389,
+    "support": 0.003203195661846795
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.5279528132087115,
+    "support": 0.0029525545800997833
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "high",
+        "fixed acidity": "high",
+        "free sulfur dioxide": "low",
+        "pH": "low",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6898210906376607,
+    "support": 0.00028230815663117466
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.5977859168665233,
+    "support": 0.003855381007908253
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "med",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6684148556451136,
+    "support": 0.0007598393390189381
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.5034590693499907,
+    "support": 0.0019418476401603744
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "low",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.8851896082673941,
+    "support": 0.0007791000339336779
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8640391729779692,
+    "support": 0.0020749975021839796
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7291334831124419,
+    "support": 0.0013702289905152428
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "high",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "low",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "high",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.861531717747088,
+    "support": 0.00022065123368779138
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.5509982183681718,
+    "support": 0.004083588668506832
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8278178080355784,
+    "support": 0.00462042437733632
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.7432403874215807,
+    "support": 0.004528610965402432
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "low",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.4804782099413696,
+    "support": 0.0021762154380324398
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "high",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8579692844902617,
+    "support": 0.00020544912914110378
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.4976383847159308,
+    "support": 0.003213345426185063
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.8215143153827247,
+    "support": 0.0023372133028232395
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8163240470703137,
+    "support": 0.0030406769262712914
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "high"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "low"
+    },
+    "weighted_average": 4.666666666666667,
+    "doc": 0.7205576185613438,
+    "support": 0.0004484273340356546
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.7174090885674396,
+    "support": 0.002852947097263031
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7993868114213192,
+    "support": 0.0026689373493572264
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "low",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6481685020407882,
+    "support": 0.002003134000029295
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "med",
+        "citric acid": "med",
+        "density": "high",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "high",
+        "sulphates": "med",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7596238095026413,
+    "support": 0.0000610045822470817
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "low",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.4438334984418621,
+    "support": 0.0015108406526467277
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "high",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6325515335126073,
+    "support": 0.0002018873546255964
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.7064693674139908,
+    "support": 0.0024167791159654573
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "high",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "low",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "high",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.8863531014281204,
+    "support": 0.00021056786501506142
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7082210289329423,
+    "support": 0.0016451466313106538
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "high",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "low",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.8691226352457093,
+    "support": 0.00009918734123671147
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "low",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.5269574539311485,
+    "support": 0.0023097161927963673
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "high",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "low",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "high",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.8055355429417959,
+    "support": 0.00015938028017220524
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.7552488266506215,
+    "support": 0.003473669878172615
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "high",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "high",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.5133985937170731,
+    "support": 0.00010023837344194811
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8601984393219481,
+    "support": 0.002623039027903031
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.863784578247666,
+    "support": 0.001798800650362271
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7000278199153225,
+    "support": 0.002272833530407161
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "high",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8718282450329505,
+    "support": 0.0010955181882365001
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "high",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.5559742883339563,
+    "support": 0.0003887875285418315
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "low",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8581859301237313,
+    "support": 0.0017460650660266162
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "high"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "low"
+    },
+    "weighted_average": 4.666666666666667,
+    "doc": 0.6296837911149462,
+    "support": 0.0004073421367309915
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6138504111574472,
+    "support": 0.003952114008343203
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "med",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7894620160001778,
+    "support": 0.0014394668045482769
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.5955809967223451,
+    "support": 0.005135805854050552
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.5720007105247747,
+    "support": 0.0009947050121889805
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7734447273085829,
+    "support": 0.005339211291964592
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.5086860763992538,
+    "support": 0.0029724602400738073
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "high",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.5060993876435147,
+    "support": 0.0012502315034959373
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "med",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "high",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "low"
+    },
+    "weighted_average": 4.666666666666667,
+    "doc": 0.5983472105328498,
+    "support": 0.00011951680071875848
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7324600710611784,
+    "support": 0.000990409156956683
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "high",
+        "free sulfur dioxide": "low",
+        "pH": "low",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.48849084694310624,
+    "support": 0.00023710254829146588
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "med",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7568252516477555,
+    "support": 0.0014721321315658254
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.6037625068001354,
+    "support": 0.005398586998747608
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6270467381745184,
+    "support": 0.0018613244943526087
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6282095298949772,
+    "support": 0.004012835064157273
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "low",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "high",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7328262376931888,
+    "support": 0.0007098954428185663
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7286956052354101,
+    "support": 0.0015686722928848719
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7211137768823013,
+    "support": 0.00042547289311397886
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6352775855295235,
+    "support": 0.0016675627867579262
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.602693540348178,
+    "support": 0.0009161287406423164
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6879042829172045,
+    "support": 0.0007427478043421704
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8598983357792455,
+    "support": 0.0016826718013999327
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "med",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6673762207917545,
+    "support": 0.002888227014562472
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "high",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "low",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.8493792295836541,
+    "support": 0.0002756689974726659
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "high",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.7889334550608252,
+    "support": 0.00038354792710878946
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6857525489847126,
+    "support": 0.0013774806964499313
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "low",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.7050343947298877,
+    "support": 0.003162559262722525
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "low",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.7979469821385397,
+    "support": 0.0007377333057531156
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "low",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.592131700385518,
+    "support": 0.0014359827537647372
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7452390650290236,
+    "support": 0.0016340851377330552
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "med",
+        "citric acid": "med",
+        "density": "low",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.8727364264005584,
+    "support": 0.00019767296860841112
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7011883403562211,
+    "support": 0.0014872210250454264
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7375051221665007,
+    "support": 0.004834721161769938
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8052380821435104,
+    "support": 0.001598976098211396
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "med",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.7688035199648886,
+    "support": 0.0028909732589494056
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "high",
+        "citric acid": "high",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "low",
+        "residual sugar": "low",
+        "sulphates": "high",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "very_low"
+    },
+    "weighted_average": 3.8333333333333335,
+    "doc": 0.6678146236713837,
+    "support": 0.0000738596388631784
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8677112697214284,
+    "support": 0.002727133260049587
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "high",
+        "density": "high",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.5724738924202685,
+    "support": 0.00016240835953367728
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "low",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.4856578140107319,
+    "support": 0.000574769394597706
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "high",
+        "fixed acidity": "high",
+        "free sulfur dioxide": "low",
+        "pH": "low",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.8618992649933768,
+    "support": 0.0001883328056441589
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "high",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "low",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.5638950456762841,
+    "support": 0.000133318203998384
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "high",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6627957135933025,
+    "support": 0.0010885609227970494
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "high",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "low",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.843336326478165,
+    "support": 0.00018003198520998026
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "high",
+        "fixed acidity": "high",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.7972028704388815,
+    "support": 0.00023548935904796198
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "low",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.807167675052971,
+    "support": 0.001950927537071232
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "high",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.603283798070906,
+    "support": 0.0005099252050468981
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.5172352550372209,
+    "support": 0.0031375748554921933
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "high",
+        "density": "med",
+        "fixed acidity": "high",
+        "free sulfur dioxide": "med",
+        "pH": "low",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.7427160005567733,
+    "support": 0.00003838911781823836
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "med",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.667523356452326,
+    "support": 0.002889955302469086
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "med",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "low",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8387234091971537,
+    "support": 0.00031924459718620695
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.5495578846354962,
+    "support": 0.0007409301724959874
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "med",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8167619261730054,
+    "support": 0.0018775573976979323
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "high",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6619063809157446,
+    "support": 0.0002314278874261635
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "low",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.823211345315525,
+    "support": 0.002680080732575587
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "high",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "med",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "low"
+    },
+    "weighted_average": 4.666666666666667,
+    "doc": 0.48753843761274984,
+    "support": 0.0002524373057733129
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "low",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.585439412227778,
+    "support": 0.0003493972680743686
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "high",
+        "density": "high",
+        "fixed acidity": "high",
+        "free sulfur dioxide": "low",
+        "pH": "low",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.5827661520314067,
+    "support": 0.00006542803114925136
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "med",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6395523071558517,
+    "support": 0.001603686126500296
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.47751512361901954,
+    "support": 0.0017007635298176382
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "low",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "low",
+        "residual sugar": "med",
+        "sulphates": "low",
+        "total sulfur dioxide": "high",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "very_high"
+    },
+    "weighted_average": 7.166666666666667,
+    "doc": 0.7987296593129678,
+    "support": 0.00008843668382904414
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "high",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "low",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.7940395095480632,
+    "support": 0.00034584079769447843
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "high",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "med",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.5211970315031744,
+    "support": 0.00012935193812197506
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "high",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "low",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.5176688894428615,
+    "support": 0.00014001442970771848
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "high",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.8033973843139671,
+    "support": 0.00010956826278169719
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8410420088771033,
+    "support": 0.001939140053949819
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "low",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.5112298233291961,
+    "support": 0.0006918506692065757
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.46887115198463447,
+    "support": 0.0025159396065835317
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "high",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.5132122761782832,
+    "support": 0.0002203547175546264
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.5782863394501041,
+    "support": 0.0023935660549226564
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "high",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6753664043956549,
+    "support": 0.0009770147230917653
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.5157441546418099,
+    "support": 0.0020331409640157016
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "high",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "high",
+        "free sulfur dioxide": "med",
+        "pH": "low",
+        "residual sugar": "med",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "low"
+    },
+    "weighted_average": 4.666666666666667,
+    "doc": 0.5571028159219635,
+    "support": 0.0000387151909286959
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "low",
+        "residual sugar": "low",
+        "sulphates": "high",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7477233443063851,
+    "support": 0.0000631574708893982
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.5565998065512301,
+    "support": 0.0005076645645119735
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "low",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.6841294545452407,
+    "support": 0.0012339145876388794
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "med",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.6485430436514344,
+    "support": 0.0013983798630850593
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "med",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7082974987697033,
+    "support": 0.0019108172460153227
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "low",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.7024295745798272,
+    "support": 0.00040056571695200213
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "low",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "high",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.5949491352584412,
+    "support": 0.00027695028214000774
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "low",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.5325992304494005,
+    "support": 0.0012280231889228257
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7736046350290501,
+    "support": 0.0030487103416304505
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7182278640159394,
+    "support": 0.0009036964729866162
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "high",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.45053944860553885,
+    "support": 0.00020872817654744917
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "high",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "low"
+    },
+    "weighted_average": 4.666666666666667,
+    "doc": 0.595735467520947,
+    "support": 0.00017669073981489705
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "low",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.8585602891937077,
+    "support": 0.0009592641965591468
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7844803160389214,
+    "support": 0.0021128436892005873
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "med",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.536626558629048,
+    "support": 0.0018747567125711496
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "low",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.6361387816729623,
+    "support": 0.0016001190342925047
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "med",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "high",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "low"
+    },
+    "weighted_average": 4.666666666666667,
+    "doc": 0.5981730371282774,
+    "support": 0.00005326299135951706
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8129680239569304,
+    "support": 0.003144044011726201
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "high",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7149580121355799,
+    "support": 0.000044768402863720007
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "high",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.43728822945220963,
+    "support": 0.0001578202398792864
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "high",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.821278493947092,
+    "support": 0.0005154754680497914
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "high",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "very_high"
+    },
+    "weighted_average": 7.166666666666667,
+    "doc": 0.47195943735866536,
+    "support": 0.00014588562561214095
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "low",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "high",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.7198885172824384,
+    "support": 0.0003044502584644684
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "med",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.5391130531550461,
+    "support": 0.00021178969113119106
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6507500144488626,
+    "support": 0.002179972189489474
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "med",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.797945564776381,
+    "support": 0.001611352356447465
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "low",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.6281223806797647,
+    "support": 0.0013609543210876302
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "med",
+        "citric acid": "low",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.8195134525386276,
+    "support": 0.00317284050263695
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "low",
+        "chlorides": "med",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "med",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.5623521865459525,
+    "support": 0.0006513845956505639
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "low",
+        "free sulfur dioxide": "med",
+        "pH": "med",
+        "residual sugar": "med",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "low"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.5019445313635451,
+    "support": 0.0006118788943679568
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "high",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "low",
+        "pH": "med",
+        "residual sugar": "low",
+        "sulphates": "med",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "med"
+    },
+    "weighted_average": 5.5,
+    "doc": 0.5081742771952259,
+    "support": 0.0008408039743398213
+  },
+  {
+    "antecedents": {
+      "data": {
+        "alcohol": "med",
+        "chlorides": "low",
+        "citric acid": "med",
+        "density": "med",
+        "fixed acidity": "med",
+        "free sulfur dioxide": "med",
+        "pH": "low",
+        "residual sugar": "low",
+        "sulphates": "low",
+        "total sulfur dioxide": "low",
+        "volatile acidity": "med"
+      }
+    },
+    "consequent": {
+      "type": "linguistic",
+      "label": "high"
+    },
+    "weighted_average": 6.333333333333334,
+    "doc": 0.43930712695642765,
+    "support": 0.0009376467734864164
+  }
+]

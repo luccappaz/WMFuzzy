@@ -13,7 +13,9 @@ impl TabularDataset for DataFrame {
     fn get_row_as_map(&self, row_idx: usize, features: &[&str]) -> HashMap<String, f64> {
         let mut map = HashMap::with_capacity(features.len());
         for &feat in features {
-            if let Ok(ca) = self.column(feat).and_then(|c| c.f64())
+            if let Ok(col) = self.column(feat)
+                && let Ok(casted) = col.cast(&DataType::Float64)
+                && let Ok(ca) = casted.f64()
                 && let Some(val) = ca.get(row_idx)
             {
                 map.insert(feat.to_string(), val);
@@ -23,9 +25,15 @@ impl TabularDataset for DataFrame {
     }
 
     fn get_column_f64(&self, name: &str) -> Result<Vec<f64>, WMModelError> {
-        let ca = self
+        let col = self
             .column(name)
-            .map_err(|e| WMModelError::DatasetError(e.to_string()))?
+            .map_err(|e| WMModelError::DatasetError(e.to_string()))?;
+
+        let casted = col
+            .cast(&DataType::Float64)
+            .map_err(|e| WMModelError::DatasetError(e.to_string()))?;
+
+        let ca = casted
             .f64()
             .map_err(|e| WMModelError::DatasetError(e.to_string()))?;
 
@@ -39,7 +47,11 @@ impl TargetVector for polars::prelude::Series {
     }
 
     fn to_vec_f64(&self) -> Result<Vec<f64>, WMModelError> {
-        let ca = self
+        let casted = self
+            .cast(&DataType::Float64)
+            .map_err(|e| WMModelError::DatasetError(e.to_string()))?;
+
+        let ca = casted
             .f64()
             .map_err(|e| WMModelError::DatasetError(e.to_string()))?;
 

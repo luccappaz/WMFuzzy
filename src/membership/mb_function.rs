@@ -8,26 +8,52 @@ use std::str::FromStr;
 use crate::membership::triangular::TriangularMF;
 use crate::{error::WMModelError, fuzzy::granularity::Granularity};
 
-/// Internal representation of supported partition strategies.
-/// Kept private to enforce validation through constructors and Serde deserialization.
+/// Internal representation of supported fuzzy partition strategies.
+///
+/// Kept `pub(crate)` to enforce domain invariant validations through type constructors
+/// (`FuzzyStrategy::linear`, `FuzzyStrategy::custom`) and Serde conversion hooks.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(tag = "type", rename_all = "lowercase")]
 pub(crate) enum InnerStrategy {
+    /// Evenly spaced linear grid over `[min, max]`.
     Linear { min: f64, max: f64 },
+    /// Custom grid defined by explicit knot coordinates.
     Custom { knots: Vec<f64> },
 }
 
-/// Public opaque wrapper for partition strategies.
-/// Guarantees domain invariants (e.g., valid bounds, ordered points) upon construction and deserialization.
+/// Opaque wrapper guaranteeing mathematical domain invariants for fuzzy partitions.
+///
+/// Ensures domain invariants upon construction and deserialization:
+/// - **Linear**: Requires $min < max$.
+/// - **Custom**: Requires at least 2 knots sorted in strictly ascending order without duplicates.
+///
+/// Applies identically to input features ($X$) and target variables ($Y$) in Case 1 model architectures.
+///
+/// # Examples
+///
+/// ```rust
+/// use wm_fuzzy::prelude::FuzzyStrategy;
+///
+/// // Create a linear strategy spanning [0.0, 100.0]
+/// let linear_strat = FuzzyStrategy::linear(0.0, 100.0).unwrap();
+///
+/// // Create a custom strategy with explicit grid knots
+/// let custom_strat = FuzzyStrategy::custom(vec![0.0, 25.0, 50.0, 100.0]).unwrap();
+/// ```
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(try_from = "InnerStrategy", into = "InnerStrategy")]
-pub struct PartitionStrategy {
+pub struct FuzzyStrategy {
     inner: InnerStrategy,
 }
 
-impl TryFrom<InnerStrategy> for PartitionStrategy {
+impl TryFrom<InnerStrategy> for FuzzyStrategy {
     type Error = WMModelError;
 
+    /// Validates and converts an unvalidated [`InnerStrategy`] into a [`FuzzyStrategy`].
+    ///
+    /// # Errors
+    /// Returns [`WMModelError::InvalidStrategy`] if bounds are invalid ($min \ge max$)
+    /// or if custom knots are unsorted/insufficient.
     fn try_from(inner: InnerStrategy) -> Result<Self, Self::Error> {
         match &inner {
             InnerStrategy::Linear { min, max } if min >= max => Err(WMModelError::InvalidStrategy(
@@ -42,20 +68,44 @@ impl TryFrom<InnerStrategy> for PartitionStrategy {
     }
 }
 
-impl From<PartitionStrategy> for InnerStrategy {
-    fn from(strategy: PartitionStrategy) -> Self {
+impl From<FuzzyStrategy> for InnerStrategy {
+    fn from(strategy: FuzzyStrategy) -> Self {
         strategy.inner
     }
 }
 
-impl PartitionStrategy {
-    /// Creates a linear partition strategy over [min, max].
+impl FuzzyStrategy {
+    /// Creates a validated linear partition strategy spanning `[min, max]`.
+    ///
+    /// Grid knots are evaluated dynamically based on the requested [`Granularity`].
+    ///
+    /// # Errors
+    /// Returns [`WMModelError::InvalidStrategy`] if `min >= max`.
+    ///
+    /// # Examples
+    /// ```rust
+    /// use wm_fuzzy::prelude::FuzzyStrategy;
+    ///
+    /// let strategy = FuzzyStrategy::linear(0.0, 10.0).unwrap();
+    /// ```
     pub fn linear(min: f64, max: f64) -> Result<Self, WMModelError> {
         let inner = InnerStrategy::Linear { min, max };
         inner.try_into()
     }
 
-    /// Creates a custom partition strategy from explicit grid knots.
+    /// Creates a validated custom partition strategy from explicit grid knot coordinates.
+    ///
+    /// # Errors
+    /// Returns [`WMModelError::InvalidStrategy`] if:
+    /// - Fewer than 2 knots are provided.
+    /// - Knots are not strictly sorted in ascending order ($x_0 < x_1 < \dots < x_n$).
+    ///
+    /// # Examples
+    /// ```rust
+    /// use wm_fuzzy::prelude::FuzzyStrategy;
+    ///
+    /// let strategy = FuzzyStrategy::custom(vec![0.0, 2.5, 5.0, 10.0]).unwrap();
+    /// ```
     pub fn custom<T: Into<Vec<f64>>>(knots: T) -> Result<Self, WMModelError> {
         let inner = InnerStrategy::Custom {
             knots: knots.into(),
@@ -63,7 +113,13 @@ impl PartitionStrategy {
         inner.try_into()
     }
 
-    /// Expands the strategy into grid knots using the provided feature granularity.
+    /// Expands the strategy into concrete grid knot coordinates using the provided [`Granularity`].
+    ///
+    /// For **Linear** strategies, computes $N$ uniformly spaced points from $min$ to $max$.
+    /// For **Custom** strategies, returns a cloned slice of the pre-validated knots.
+    ///
+    /// # Arguments
+    /// * `granularity` - Number of partition sets ($N \ge 2$).
     pub fn resolve_knots(&self, granularity: Granularity) -> Vec<f64> {
         match &self.inner {
             InnerStrategy::Linear { min, max } => {
@@ -75,19 +131,23 @@ impl PartitionStrategy {
         }
     }
 
-    /// Deserializes a JSON string containing a feature strategy map directly into a `HashMap<String, PartitionStrategy>`.
-    pub fn map_from_json(
-        json_str: &str,
-    ) -> Result<HashMap<String, PartitionStrategy>, WMModelError> {
+    /// Deserializes a JSON string mapping feature/target names to [`FuzzyStrategy`] instances.
+    ///
+    /// # Errors
+    /// Returns [`WMModelError::InvalidStrategy`] if the JSON string is malformed or violates domain invariants.
+    pub fn map_from_json(json_str: &str) -> Result<HashMap<String, FuzzyStrategy>, WMModelError> {
         serde_json::from_str(json_str).map_err(|e| {
             WMModelError::InvalidStrategy(format!("Failed to parse JSON strategy map: {}", e))
         })
     }
 
-    /// Reads and deserializes a JSON file directly into a `HashMap<String, PartitionStrategy>`.
+    /// Reads and deserializes a JSON file into a strategy map.
+    ///
+    /// # Errors
+    /// Returns [`WMModelError::InvalidStrategy`] if file I/O fails or if contents violate strategy invariants.
     pub fn map_from_json_file<P: AsRef<Path>>(
         path: P,
-    ) -> Result<HashMap<String, PartitionStrategy>, WMModelError> {
+    ) -> Result<HashMap<String, FuzzyStrategy>, WMModelError> {
         let file = File::open(path).map_err(|e| {
             WMModelError::InvalidStrategy(format!("Failed to open strategy JSON file: {}", e))
         })?;
@@ -98,9 +158,12 @@ impl PartitionStrategy {
         })
     }
 
-    /// Serializes and saves a map of partition strategies to a JSON file.
+    /// Serializes and writes a map of [`FuzzyStrategy`] configurations to a JSON file.
+    ///
+    /// # Errors
+    /// Returns [`WMModelError::InvalidStrategy`] if creating or writing to the destination file fails.
     pub fn map_to_json_file<P: AsRef<Path>>(
-        map: &HashMap<String, PartitionStrategy>,
+        map: &HashMap<String, FuzzyStrategy>,
         path: P,
     ) -> Result<(), WMModelError> {
         let file = File::create(path).map_err(|e| {
@@ -113,6 +176,7 @@ impl PartitionStrategy {
         })
     }
 
+    /// Validates custom knot sequence ordering and minimum length.
     fn validate_knots(knots: &[f64]) -> Result<(), WMModelError> {
         if knots.len() < 2 {
             return Err(WMModelError::InvalidStrategy(format!(
@@ -128,29 +192,32 @@ impl PartitionStrategy {
         Ok(())
     }
 
+    /// Exposes internal strategy variant for crate-internal model compilation.
     pub(crate) fn inner(&self) -> &InnerStrategy {
         &self.inner
     }
 }
 
-/// Enum specifying the supported fuzzy membership function kinds.
+/// Enumeration of supported membership function geometries.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "lowercase")]
 pub enum MFKind {
+    /// Triangular membership function geometry ($a, b, c$).
     Triangular,
     // Gaussian,
     // Trapezoidal,
 }
 
 impl MFKind {
-    /// Infers the partition granularity from explicit grid knot count based on the MF geometry.
+    /// Infers the partition [`Granularity`] from explicit grid knot count based on the geometry type.
+    ///
+    /// For **Triangular** MFs, each grid knot corresponds exactly to 1 modal peak/center.
+    ///
+    /// # Errors
+    /// Returns [`WMModelError`] if `knot_count < 2`.
     pub fn infer_granularity(&self, knot_count: usize) -> Result<Granularity, WMModelError> {
         match self {
-            // For Triangular MFs, each grid knot corresponds to 1 MF center/peak.
             MFKind::Triangular => Granularity::try_from(knot_count),
-            // Future MF kinds can define their own knot-to-granularity mapping rules:
-            // MFKind::Gaussian => Granularity::try_from(knot_count),
-            // MFKind::Trapezoidal => Granularity::try_from((knot_count + 1) / 2),
         }
     }
 }
@@ -158,6 +225,7 @@ impl MFKind {
 impl FromStr for MFKind {
     type Err = WMModelError;
 
+    /// Parses a string slice into an [`MFKind`] variant (case-insensitive).
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         match s.to_lowercase().as_str() {
             "triangular" => Ok(MFKind::Triangular),
@@ -177,31 +245,37 @@ impl TryFrom<&str> for MFKind {
     }
 }
 
-/// Enum wrapping the supported fuzzy membership function types.
+/// Polymorphic container wrapping all concrete fuzzy membership function types.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "lowercase")]
 pub enum MembershipFunction {
+    /// Triangular membership function variant.
     Triangular(TriangularMF),
 }
 
-/// Core interface for evaluating and querying fuzzy membership functions.
+/// Fundamental operational interface for evaluating fuzzy membership functions.
 pub trait MembershipOp: Send + Sync {
-    /// Evaluates the membership degree for a given value `x` (returns a value in [0.0, 1.0]).
+    /// Evaluates the membership degree $\mu(x) \in [0.0, 1.0]$ for a crisp input $x$.
     fn eval(&self, x: f64) -> f64;
 
-    /// Returns the peak center where the membership degree equals 1.0.
+    /// Returns the modal center/peak coordinate $c$ where $\mu(c) = 1.0$.
     fn center(&self) -> f64;
 
-    /// Returns the support interval `(min, max)` where the membership degree is strictly greater than 0.0.
+    /// Returns the support interval $(x_{\min}, x_{\max})$ where $\mu(x) > 0.0$.
     fn support(&self) -> (f64, f64);
 }
 
-/// Interface for generating fuzzy partitions across the universe of discourse.
+/// Interface for generating partitioned fuzzy membership function collections across a universe of discourse.
 pub trait Partitionable: Sized {
-    /// Generates a collection of membership functions according to the given strategy.
+    /// Generates a complete sequence of membership functions covering the partition domain.
+    ///
+    /// # Arguments
+    /// * `kind` - Geometry type ([`MFKind`]).
+    /// * `strategy` - Partitioning bounds or custom grid knots ([`FuzzyStrategy`]).
+    /// * `granularity` - Number of fuzzy sets to instantiate ([`Granularity`]).
     fn create_partition(
         kind: MFKind,
-        strategy: PartitionStrategy,
+        strategy: FuzzyStrategy,
         granularity: Granularity,
     ) -> Vec<Self>;
 }
@@ -229,11 +303,10 @@ impl MembershipOp for MembershipFunction {
 impl Partitionable for MembershipFunction {
     fn create_partition(
         kind: MFKind,
-        strategy: PartitionStrategy,
+        strategy: FuzzyStrategy,
         granularity: Granularity,
     ) -> Vec<Self> {
         match kind {
-            // Delegates partition generation to TriangularMF and wraps the result in the enum.
             MFKind::Triangular => TriangularMF::create_partition(kind, strategy, granularity)
                 .into_iter()
                 .map(MembershipFunction::Triangular)
@@ -255,15 +328,15 @@ mod tests {
         }"#;
 
         // Test loading from string
-        let map = PartitionStrategy::map_from_json(json_data).unwrap();
+        let map = FuzzyStrategy::map_from_json(json_data).unwrap();
         assert!(
             matches!(map.get("x1").unwrap().inner(), InnerStrategy::Linear { min, max } if *min == 0.0 && *max == 10.0)
         );
 
         // Test file roundtrip
         let temp_file = NamedTempFile::new().unwrap();
-        PartitionStrategy::map_to_json_file(&map, temp_file.path()).unwrap();
-        let loaded_file_map = PartitionStrategy::map_from_json_file(temp_file.path()).unwrap();
+        FuzzyStrategy::map_to_json_file(&map, temp_file.path()).unwrap();
+        let loaded_file_map = FuzzyStrategy::map_from_json_file(temp_file.path()).unwrap();
 
         assert_eq!(map, loaded_file_map);
     }

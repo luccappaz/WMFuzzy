@@ -1,5 +1,5 @@
 pub mod mb_function;
 pub mod triangular;
 
-pub use mb_function::MembershipFunction;
-pub use mb_function::PartitionStrategy as FuzzyStrategy;
+pub use mb_function::FuzzyStrategy;
+pub use mb_function::{MFKind, MembershipFunction};

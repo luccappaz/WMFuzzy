@@ -1,121 +1,90 @@
-use std::{collections::HashMap, fmt};
-
 use serde::{Deserialize, Serialize};
+use std::collections::{BTreeMap, HashMap};
+use std::fmt;
 
-use crate::{fuzzy::TNorm, types::FuzzyValues};
+use crate::fuzzy::TNorm;
 
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+/// Represents the antecedent condition of a fuzzy rule (e.g., `x1 IS low AND x2 IS high`).
+///
+/// Uses `BTreeMap` internally so feature names are stored in canonical lexicographical order,
+/// enabling `Hash`, `Eq`, `Ord`, and `PartialOrd` to be derived automatically.
+#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash, Serialize, Deserialize)]
 pub struct Antecedents {
-    pub data: HashMap<String, String>,
+    pub data: BTreeMap<String, String>,
 }
 
 impl Antecedents {
-    pub fn new(data: HashMap<String, String>) -> Self {
-        Self { data }
+    /// Creates a new `Antecedents` instance from an iterator of feature-label pairs.
+    pub fn new(data: impl IntoIterator<Item = (String, String)>) -> Self {
+        Self {
+            data: data.into_iter().collect(),
+        }
     }
 
-    pub fn get_value(&self, feature: &str) -> Option<&String> {
-        self.data.get(feature)
-    }
-
-    /// Safely computes the input center map.
-    /// Returns `None` if any feature or group is missing from `centers`.
+    /// Retrieves the center values ($c$) for each feature's assigned membership function label.
+    ///
+    /// Used during minimum Euclidean distance calculations when no rules fire.
     pub fn get_input_center(
         &self,
-        centers: &HashMap<String, FuzzyValues>,
+        mf_centers: &HashMap<String, HashMap<String, f64>>,
     ) -> Option<HashMap<String, f64>> {
-        let mut input_center = HashMap::with_capacity(self.data.len());
-        for (feature, group) in &self.data {
-            let center = centers.get(feature).and_then(|m| m.get(group))?;
-            input_center.insert(feature.clone(), *center);
-        }
-        Some(input_center)
-    }
+        let mut input_centers = HashMap::with_capacity(self.data.len());
 
-    /// Computes the Euclidean distance between two antecedents.
-    /// Returns `f64::INFINITY` if antecedents are empty, feature sets mismatch, or centers are missing.
-    pub fn distance(&self, other: &Antecedents, centers: &HashMap<String, FuzzyValues>) -> f64 {
-        if self.data.is_empty() || other.data.is_empty() || self.data.len() != other.data.len() {
-            return f64::INFINITY;
+        for (feature, label) in &self.data {
+            let center = mf_centers.get(feature)?.get(label)?;
+            input_centers.insert(feature.clone(), *center);
         }
 
-        let mut sum_sq: f64 = 0.0;
-        for (feature, group) in &self.data {
-            let other_group = match other.data.get(feature) {
-                Some(g) => g,
-                None => return f64::INFINITY,
-            };
-
-            let c1 = match centers.get(feature).and_then(|m| m.get(group)) {
-                Some(val) => val,
-                None => return f64::INFINITY,
-            };
-
-            let c2 = match centers.get(feature).and_then(|m| m.get(other_group)) {
-                Some(val) => val,
-                None => return f64::INFINITY,
-            };
-
-            sum_sq += (c1 - c2).powi(2);
-        }
-
-        sum_sq.sqrt()
+        Some(input_centers)
     }
 }
 
 impl fmt::Display for Antecedents {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        let mut conditions: Vec<_> = self
+        let terms: Vec<String> = self
             .data
             .iter()
-            .map(|(feature, group)| format!("{}={}", feature, group))
+            .map(|(feature, label)| format!("{} IS {}", feature, label))
             .collect();
-        conditions.sort();
-        write!(f, "{}", conditions.join(" AND "))
+
+        write!(f, "{}", terms.join(" AND "))
     }
 }
 
-/// Calculates rule firing strength based on feature memberships.
+/// Computes the overall firing strength ($\mu_A(x)$) of an antecedent condition
+/// using the specified T-Norm operator (`Product` or `Minimum`).
 pub fn calculate_firing_strength(
     antecedents: &Antecedents,
-    memberships: &HashMap<String, HashMap<String, f64>>,
+    row_memberships: &HashMap<String, HashMap<String, f64>>,
     t_norm: TNorm,
 ) -> f64 {
     if antecedents.data.is_empty() {
         return 0.0;
     }
 
-    let get_mu = |feature: &str, group: &str| {
-        memberships
-            .get(feature)
-            .and_then(|groups| groups.get(group))
-            .copied()
-            .unwrap_or(0.0)
-    };
+    let mut firing_strength = 1.0;
 
-    match t_norm {
-        TNorm::Product => {
-            let mut strength = 1.0;
-            for (feature, group) in &antecedents.data {
-                strength *= get_mu(feature, group);
-                if strength == 0.0 {
-                    break;
-                }
+    for (feature, label) in &antecedents.data {
+        let mu = row_memberships
+            .get(feature)
+            .and_then(|fuzzy_sets| fuzzy_sets.get(label))
+            .copied()
+            .unwrap_or(0.0);
+
+        match t_norm {
+            TNorm::Product => {
+                firing_strength *= mu;
             }
-            strength
+            TNorm::Minimum => {
+                firing_strength = firing_strength.min(mu);
+            }
         }
-        TNorm::Min => {
-            let mut min_mu = 1.0;
-            for (feature, group) in &antecedents.data {
-                let mu = get_mu(feature, group);
-                if mu < min_mu {
-                    min_mu = mu;
-                }
-                if min_mu == 0.0 {
-                    break;
-                }
-            }
-            min_mu
+
+        // Short-circuit execution if firing strength reaches zero
+        if firing_strength <= 0.0 {
+            return 0.0;
         }
     }
+
+    firing_strength
 }

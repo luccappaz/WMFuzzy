@@ -4,5 +4,6 @@ pub mod fuzzy;
 pub mod membership;
 pub mod metrics;
 pub mod model;
+pub mod prelude;
 pub mod types;
 pub mod vis;

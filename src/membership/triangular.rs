@@ -2,9 +2,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::{
     fuzzy::granularity::Granularity,
-    membership::mb_function::{
-        InnerStrategy, MFKind, MembershipOp, PartitionStrategy, Partitionable,
-    },
+    membership::mb_function::{FuzzyStrategy, InnerStrategy, MFKind, MembershipOp, Partitionable},
 };
 
 /// Triangular Membership Function defined by parameters `(a, b, c)` where:
@@ -113,7 +111,7 @@ impl MembershipOp for TriangularMF {
 impl Partitionable for TriangularMF {
     fn create_partition(
         _kind: MFKind,
-        strategy: PartitionStrategy,
+        strategy: FuzzyStrategy,
         granularity: Granularity,
     ) -> Vec<Self> {
         match strategy.inner() {
@@ -240,8 +238,8 @@ mod tests {
 
     #[test]
     fn test_create_partition_linear_strategy() {
-        let strategy = PartitionStrategy::linear(0.0, 100.0).unwrap();
-        let granularity = Granularity::Three;
+        let strategy = FuzzyStrategy::linear(0.0, 100.0).unwrap();
+        let granularity = Granularity::THREE;
 
         let partition = TriangularMF::create_partition(MFKind::Triangular, strategy, granularity);
 

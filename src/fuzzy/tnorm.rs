@@ -6,20 +6,20 @@ use serde::{Deserialize, Serialize};
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub enum TNorm {
     Product,
-    Min,
+    Minimum,
 }
 
 impl TNormOp for TNorm {
     fn identity(&self) -> f64 {
         match self {
             TNorm::Product => 1.0,
-            TNorm::Min => 1.0,
+            TNorm::Minimum => 1.0,
         }
     }
     fn combine(&self, a: f64, b: f64) -> f64 {
         match self {
             TNorm::Product => a * b,
-            TNorm::Min => a.min(b),
+            TNorm::Minimum => a.min(b),
         }
     }
 }

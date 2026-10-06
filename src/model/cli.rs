@@ -4,7 +4,23 @@ use crate::model::wm::WMModel;
 use std::collections::HashMap;
 use std::io::{self, BufRead, Write};
 
+/// Interactive CLI extension trait for [`WMModel`].
+///
+/// Extends `WMModel` with command-line user prompting capabilities for real-time,
+/// single-sample fuzzy inference.
 pub trait WMModelCliExt {
+    /// Prompts the user via `stdin` and `stdout` for all input features configured in the model.
+    ///
+    /// Interactively collects crisp feature values, validates user inputs against float parsing errors,
+    /// and invokes single-sample inference (`infer`).
+    ///
+    /// Works identically for both **Case 1** (Linguistic Target Partitioning) and **Case 2** (Continuous Numeric Target) models.
+    ///
+    /// # Arguments
+    /// * `t_norm` - Triangular norm operator used to combine antecedent firing strengths (`TNorm::Product` or `TNorm::Minimum`).
+    ///
+    /// # Errors
+    /// Returns [`WMModelError`] if the underlying model is not built or fails to resolve feature configurations.
     fn prompt_infer(&mut self, t_norm: TNorm) -> Result<Vec<ActivatedRule<'_>>, WMModelError>;
 }
 
@@ -16,7 +32,22 @@ impl WMModelCliExt for WMModel {
     }
 }
 
-/// Função utilitária genérica que aceita qualquer leitor/escritor de I/O
+/// Generic I/O helper function for interactive fuzzy model inference.
+///
+/// Accepts any input reader ([`BufRead`]) and output writer ([`Write`]), enabling testable
+/// interactive prompting with custom streams, buffers, or standard console handles.
+///
+/// # Arguments
+/// * `model` - Mutable reference to a built [`WMModel`].
+/// * `reader` - Input stream handle (e.g., `stdin.lock()` or `Cursor<Vec<u8>>`).
+/// * `writer` - Output stream handle (e.g., `stdout()` or `Vec<u8>`).
+/// * `t_norm` - Triangular norm used for calculating rule activation levels.
+///
+/// # Returns
+/// A vector of [`ActivatedRule`] references sorted in descending order of firing strength.
+///
+/// # Errors
+/// Returns [`WMModelError::InvalidStrategy`] if model structures cannot be built.
 pub fn prompt_infer_from_io<'a, R: BufRead, W: Write>(
     model: &'a mut WMModel,
     reader: &mut R,
@@ -72,13 +103,38 @@ pub fn prompt_infer_from_io<'a, R: BufRead, W: Write>(
 
 #[cfg(test)]
 mod cli_tests {
-    use crate::types::HashDataset;
-
     use super::*;
+    use crate::types::HashDataset;
     use std::collections::HashMap;
     use std::io::Cursor;
 
-    fn setup_trained_model() -> WMModel {
+    /// Helper: Sets up a trained model with Case 1 (Linguistic Target Partitioning).
+    fn setup_case1_linguistic_model() -> WMModel {
+        let mut model = WMModel::new();
+        model
+            .set_kind("triangular")
+            .unwrap()
+            .add_granularity("x1", 3)
+            .unwrap()
+            .add_linear_strategy("x1", 0.0, 10.0)
+            .unwrap()
+            .add_target_granularity(3)
+            .unwrap()
+            .add_target_linear_strategy(0.0, 100.0)
+            .unwrap();
+
+        let x_train: HashDataset = vec![HashMap::from([("x1".to_string(), 5.0)])];
+        let y_train = vec![50.0];
+
+        model
+            .generate_rules(&x_train, &y_train, None, TNorm::Product, 0.0, 0.0)
+            .unwrap();
+
+        model
+    }
+
+    /// Helper: Sets up a trained model with Case 2 (Continuous Numeric Target Regression).
+    fn setup_case2_numeric_model() -> WMModel {
         let mut model = WMModel::new();
         model
             .set_kind("triangular")
@@ -89,7 +145,7 @@ mod cli_tests {
             .unwrap();
 
         let x_train: HashDataset = vec![HashMap::from([("x1".to_string(), 5.0)])];
-        let y_train = vec![1.0];
+        let y_train = vec![5.2];
 
         model
             .generate_rules(&x_train, &y_train, None, TNorm::Product, 0.0, 0.0)
@@ -99,8 +155,8 @@ mod cli_tests {
     }
 
     #[test]
-    fn test_prompt_infer_valid_input() {
-        let mut model = setup_trained_model();
+    fn test_prompt_infer_case1_linguistic_target() {
+        let mut model = setup_case1_linguistic_model();
 
         let input_bytes = b"5.0\n";
         let mut reader = Cursor::new(input_bytes);
@@ -110,8 +166,28 @@ mod cli_tests {
 
         assert!(result.is_ok());
         let activated_rules = result.unwrap();
-
         assert!(!activated_rules.is_empty());
+        assert!(model.target_mfs().is_ok());
+
+        let output_text = String::from_utf8(writer).unwrap();
+        assert!(output_text.contains("INPUT INFERENCE"));
+        assert!(output_text.contains("Enter the value for the attribute \"x1\""));
+    }
+
+    #[test]
+    fn test_prompt_infer_case2_numeric_target() {
+        let mut model = setup_case2_numeric_model();
+
+        let input_bytes = b"5.0\n";
+        let mut reader = Cursor::new(input_bytes);
+        let mut writer = Vec::new();
+
+        let result = prompt_infer_from_io(&mut model, &mut reader, &mut writer, TNorm::Product);
+
+        assert!(result.is_ok());
+        let activated_rules = result.unwrap();
+        assert!(!activated_rules.is_empty());
+        assert!(model.target_mfs().is_err()); // Case 2 has no target MFs
 
         let output_text = String::from_utf8(writer).unwrap();
         assert!(output_text.contains("INPUT INFERENCE"));
@@ -120,9 +196,9 @@ mod cli_tests {
 
     #[test]
     fn test_prompt_infer_invalid_input_retry() {
-        let mut model = setup_trained_model();
+        let mut model = setup_case1_linguistic_model();
 
-        // Primeira entrada inválida, seguida de um valor float válido
+        // First invalid string input ("abc"), followed by a valid float ("5.0")
         let input_bytes = b"abc\n5.0\n";
         let mut reader = Cursor::new(input_bytes);
         let mut writer = Vec::new();

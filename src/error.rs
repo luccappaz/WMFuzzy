@@ -27,8 +27,10 @@ pub enum WMModelError {
     DatasetError(String),
     #[error("Rule not found or insufficient activation")]
     InferenceError,
-    #[error("Invalid strategy")]
+    #[error("Invalid strategy: {0}")]
     InvalidStrategy(String),
     #[error("Memberships not configured yet. Need to build")]
     UnconfiguredError,
+    #[error("Target fuzzy config unset")]
+    TargetMFUnset,
 }

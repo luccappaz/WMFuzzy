@@ -1,0 +1,13 @@
+[book]
+authors = ["Lucca Pimenta"]
+language = "en"
+multilingual = false
+src = "src"
+title = "wm_fuzzy - Documentation guide"
+
+[output.html]
+git-repository-url = "https://github.com/luccappaz/WMFuzzy"
+mathjax-support = true
+
+[output.html.search]
+enable = true
